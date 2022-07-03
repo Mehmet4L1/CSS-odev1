@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,100&family=Raleway:wght@200&display=swap');
+
+:root{
+    --main-color: #e84242;
+    --black-color: #0e0e0e ;
+    --border: 0.1rem solid  #e84242 ;
+}
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+}
+body{
+    background-color:var(--main-color);
+    height: 400vh;
+}
+html{
+    font-size: 62.5%; /*rem'i  tam sayı px e dönüştürmek için*/ 
+    overflow-x: hidden;
+}
+section{
+    padding: 5rem 37%;
+}
+.header{
+    background-color: white; /* header kımının background colorunu belirliyoruz*/
+    display: flex; /*yan yana koyduk*/
+    align-items: center; /* dikeyde hizaladık-ortaladık*/
+    justify-content: space-between;/*yatayda aralarına eşit mesafe koyduk*/
+    padding: 0 7%;/*üst-alt 0 boşluk, sağ-sol %7 boşluk verdik*/
+    margin: 2rem 7%; /*alt-üst 2rem boşluk , sağ-sol %7 boşluk*/
+    border-radius: 30rem; /*border köşelerini eğimli yaptık*/
+    box-shadow: -5px 5px 10px 0 rgba(0,0,0,0.75); /*header box'a gölge verdik*/
+    position: sticky; /*header, top:0px olduğunda, scroll ile aşağı kaydırsakta yukarda yapışık şekilde sabit kalır*/
+    top:0;
+    z-index: 1000; /* Çok yüksek bir sayı verdik çünkü önünü hiçbir şeyin kapatmasını istemiyoruz*/
+}
+.header .logo img{
+    width: 9rem;
+    height: 7rem;
+}
+.header .navbar a{
+    margin: 0 1rem ;
+    font-size: 1.6rem; /*1.6rem artık 16px e eşit oldu*/
+    color: var(--black-color);
+    border-bottom: 0.1rem solid transparent; /*0.1rem=1px, transparent dememizin sebebi, animasyon bittiğinde bordr çizgisinin kaybolması için */
+    
+    
+}
+.header .navbar a:hover{
+    border-color: var(--main-color);
+    padding-bottom: 0.5rem;
+    
+}
+.header .buttons button{
+    cursor: pointer;
+    font-size: 2rem; /*25px oluyor*/
+    margin-left: 2rem;
+    background-color: transparent; 
+}
+.header .buttons button:hover{
+    transform: scale(1.2);
+}
+.content{
+    height: 60rem;
+    margin: 3rem 50rem;
+    padding: 2rem;
+}
+.content .baslık{
+    color: var(--black-color);
+    font-size: 7rem;    
+    text-align: center;
+}
+
+.content .paragraf{
+    font-size: 3rem;
+}
+.urunler h1{
+    font-size: 5rem;
+    margin: 2rem;
+}
+.urunler .box-container .kategori{
+    color: var(--black-color);
+    font-size: 3rem;
+}
+.urunler .box-container .price{
+    color: var(--black-color);
+    font-size: 2rem;
+}
+.urunler .box-container .price span{
+    color: var(--black-color);
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-decoration:line-through;
+}
+.urunler .box-container .add-btn a{
+    font-size: 3rem;
+    color: var(--black-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.2rem solid black;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%; /*borderı yuvarlak yapıyoruz*/
+}
+
+
+.urunler .box-container{
+    display: grid; /*menü kapsayıcı konteynırına grid yapısını uyguluyoruz*/
+    grid-template-columns: repeat(auto-fit, minmax( 30rem, 1fr));/* auto-fitle tekrar et , min 30rem , max 1fr boyutunda)*/
+    gap: 1.5rem;
+}
+
+.urunler .box-container .box{ 
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    border-radius: 3rem;
+    height: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem ;
+}
+.urunler .box-container .box img{ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    border-radius: 3rem;
+}
+/****************Footer***********************/
+
+.footer{
+    margin-top: 5rem;
+    background-color:var(--black-color);
+    text-align: center;
+}
+.footer .share{
+    padding: 2rem 0;
+}
+.footer .share a{
+    padding: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    color: #fff;
+    font-size: 2rem;
+    margin: .3rem;
+    border: var(--border);
+    border-radius: 50%;
+}
+.footer .share a:hover{
+    background-color:var(--main-color);
+}
+.footer .share a:hover i{ /*a hover olduğunda i etiketine uygula*/
+    transform: scale(1.3);
+}
+.footer .credit{
+    color: #fff;
+    padding: 2rem;
+    font-size: 1rem;
+}.footer .credit span{
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
